@@ -3,22 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BMI.MainPage">
 
-    <VerticalStackLayout Padding="20, 20, 20, 20">
+    <VerticalStackLayout Padding="20, 30, 20, 20">
         <Label Text="BMI Calculator"
                FontSize="32"
                Margin="0, 0, 0, 30"
-               VerticalTextAlignment="Center"/>
-        <Label Text="Age"/>
+               HorizontalOptions="Center"/>
+        <Label Text="Age" 
+               Margin="0, 20, 0, 5"/>
         <Entry Placeholder="25" />
         <Label Text="Weight (kg)" 
-               Margin="0, 20, 0, 0"/>
+               Margin="0, 20, 0, 5"/>
         <Entry Placeholder="75"/>
         <Label Text="Height (cm)"
-               Margin="0, 20, 0, 0"/>
+               Margin="0, 20, 0, 5"/>
         <Entry Placeholder="174" />
         <Button Text="Calculate"
                 Margin="0, 20, 0, 0"
                 CornerRadius="20"/>
+        <Label Text=""
+               Margin="0, 40, 0, 0"
+               HorizontalOptions="CenterAndExpand"/>
 
     </VerticalStackLayout>
 
