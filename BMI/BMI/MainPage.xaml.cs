@@ -41,6 +41,29 @@
         {
             InitializeComponent();
         }
+
+        private void BerechneBMI(object sender, EventArgs e)
+        {
+            string ageWert = age.Text;
+            bool ageTest = int.TryParse(ageWert, out int ageWert2);
+            string weightWert = weight.Text;
+            bool weightTest = int.TryParse(weight.Text, out int weightWert2);
+            string heightWert = height.Text;
+            bool heightTest = int.TryParse (height.Text, out int heightWert2);
+            string text = "";
+            if (ageTest == false) {
+                text = "Falshe eingabe 1\n";
+            } 
+            if (weightTest == false)
+            {
+                text = text + "Falsche eingabe 2\n";
+            } 
+            if (heightTest == false)
+            {
+                text = text + "Falsche eingabe 3";
+            }
+            outputBMI.Text = text;
+        }
     }
 
 }

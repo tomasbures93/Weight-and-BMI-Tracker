@@ -1,28 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BMI.MainPage">
+             x:Class="BMI.MainPage"
+             xmlns:SharedStyles="clr-namespace:SharedStyles">
 
     <VerticalStackLayout Padding="20, 30, 20, 20">
         <Label Text="BMI Calculator"
                FontSize="32"
+               TextColor="{x:Static Member=SharedStyles:SharedResources.FontColor}"
                Margin="0, 0, 0, 30"
                HorizontalOptions="Center"/>
-        <Label Text="Age" 
+        <Label Text="Age"
+               TextColor="{x:Static Member=SharedStyles:SharedResources.FontColor}"
                Margin="0, 20, 0, 5"/>
-        <Entry Placeholder="25" />
+        <Entry x:Name="age"
+               Placeholder="25" />
         <Label Text="Weight (kg)" 
                Margin="0, 20, 0, 5"/>
-        <Entry Placeholder="75"/>
+        <Entry x:Name="weight"
+               Placeholder="75"/>
         <Label Text="Height (cm)"
                Margin="0, 20, 0, 5"/>
-        <Entry Placeholder="174" />
-        <Button Text="Calculate"
+        <Entry x:Name="height"
+               Placeholder="174" />
+        <Button x:Name="Calculate"
+                Text="Calculate"
+                Clicked="BerechneBMI"
                 Margin="0, 20, 0, 0"
+                BackgroundColor="{x:Static Member=SharedStyles:SharedResources.BackgroundColor}"
                 CornerRadius="20"/>
         <Label Text=""
+               x:Name="outputBMI"
                Margin="0, 40, 0, 0"
-               HorizontalOptions="CenterAndExpand"/>
+               HorizontalOptions="Center"/>
+        <Label Text=""
+               x:Name="outputTip"
+               Margin="0, 40, 0, 0"
+               HorizontalOptions="Center"/>
 
     </VerticalStackLayout>
 
