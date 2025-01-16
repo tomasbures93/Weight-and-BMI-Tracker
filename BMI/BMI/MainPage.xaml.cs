@@ -44,25 +44,46 @@
 
         private void BerechneBMI(object sender, EventArgs e)
         {
-            string ageWert = age.Text;
-            bool ageTest = int.TryParse(ageWert, out int ageWert2);
-            string weightWert = weight.Text;
-            bool weightTest = int.TryParse(weight.Text, out int weightWert2);
-            string heightWert = height.Text;
-            bool heightTest = int.TryParse (height.Text, out int heightWert2);
+            string ageWert = ageInput.Text;
+            bool ageTest = int.TryParse(ageWert, out int age);
+            string weightWert = weightInput.Text;
+            bool weightTest = double.TryParse(weightWert, out double weight);
+            string heightWert = heightInput.Text;
+            bool heightTest = int.TryParse (heightWert, out int height);
             string text = "";
+            int testBMI;
+            bool eingabeOK = true;
             if (ageTest == false) {
-                text = "Falshe eingabe 1\n";
+                text = "Age: Insert only numbers.\n";
+                eingabeOK = false;
             } 
             if (weightTest == false)
             {
-                text = text + "Falsche eingabe 2\n";
+                text = text + "Weight: Insert only numbers.\n";
+                eingabeOK = false;
             } 
             if (heightTest == false)
             {
-                text = text + "Falsche eingabe 3";
+                eingabeOK = false;
+                text = text + "Height: Insert only numbers";
             }
-            outputBMI.Text = text;
+            if (eingabeOK == true)
+            {
+                outputBMI.Text = text;
+            } 
+            else
+            {
+                // When input OK ist
+                if (age < 19) {
+                    outputBMI.Text =    "You are young.\nBMI is interpreted differently because children and teens are still growing.\n" +
+                                        "Instead of fixed categories like for adults, BMI is assessed using percentiles based on age and sex.";
+                } 
+                else
+                {
+                    double bmi = weight / (height * height);
+                    // we can test BMI on age 
+                }
+            }
         }
     }
 
