@@ -51,8 +51,9 @@
             string heightWert = heightInput.Text;
             bool heightTest = int.TryParse (heightWert, out int height);
             string text = "";
-            int testBMI;
+            int hinweis = 0;        // 1 - underweight ; 2 - nomral; 3- overweight
             bool eingabeOK = true;
+            double bmi = weight / (height * height);
             if (ageTest == false) {
                 text = "Age: Insert only numbers.\n";
                 eingabeOK = false;
@@ -75,14 +76,69 @@
             {
                 // When input OK ist
                 if (age < 19) {
-                    outputBMI.Text =    "You are young.\nBMI is interpreted differently because children and teens are still growing.\n" +
-                                        "Instead of fixed categories like for adults, BMI is assessed using percentiles based on age and sex.";
+                    hinweis = 0;
                 } 
                 else
                 {
-                    double bmi = weight / (height * height);
-                    // we can test BMI on age 
+                    if(age >= 19 && age <= 24)
+                    {
+                        if (bmi < 19)
+                            hinweis = 1;
+                        else if (bmi >= 19 && bmi <= 24)
+                            hinweis = 2;
+                        else
+                            hinweis = 3;                     
+                    }
+                    else if(age >= 25 && age <= 34)
+                    {
+                        if (bmi < 20)
+                            hinweis = 1;
+                        else if (bmi >= 20 && bmi <= 25)
+                            hinweis = 2;
+                        else
+                            hinweis = 3;
+                    }
+                    else if(age >= 35 && age <= 44)
+                    {
+                        if (bmi < 21)
+                            hinweis = 1;
+                        else if (bmi >= 21 && bmi <= 26)
+                            hinweis = 2;
+                        else
+                            hinweis = 3;
+                    } 
+                    else if(age >= 45 && age <= 54)
+                    {
+                        if (bmi < 22)
+                            hinweis = 1;
+                        else if (bmi >= 22 && bmi <= 27)
+                            hinweis = 2;
+                        else
+                            hinweis = 3;
+                    }
+                    else if(age >= 55 && age <= 64)
+                    {
+                        if (bmi < 23)
+                            hinweis = 1;
+                        else if (bmi >= 23 && bmi <= 28)
+                            hinweis = 2;
+                        else
+                            hinweis = 3;
+                    }
+                    else if(age >= 64)
+                    {
+                        if (bmi < 24)
+                            hinweis = 1;
+                        else if (bmi >= 24 && bmi <= 29)
+                            hinweis = 2;
+                        else
+                            hinweis = 3;
+                    }
                 }
+
+                //
+                outputBMI.Text = "You are young.\nBMI is interpreted differently because children and teens are still growing.\n" +
+                                    "Instead of fixed categories like for adults, BMI is assessed using percentiles based on age and sex.";
             }
         }
     }
