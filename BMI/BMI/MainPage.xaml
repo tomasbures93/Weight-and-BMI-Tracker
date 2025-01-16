@@ -14,15 +14,24 @@
                TextColor="{x:Static Member=SharedStyles:SharedResources.FontColor}"
                Margin="0, 20, 0, 5"/>
         <Entry x:Name="age"
-               Placeholder="25" />
+               Placeholder="25"
+               MaxLength="3"
+               Keyboard="Numeric"
+               ClearButtonVisibility="WhileEditing"/>
         <Label Text="Weight (kg)" 
                Margin="0, 20, 0, 5"/>
         <Entry x:Name="weight"
-               Placeholder="75"/>
+               Placeholder="75"
+               MaxLength="3"
+               Keyboard="Numeric"
+               ClearButtonVisibility="WhileEditing"/>
         <Label Text="Height (cm)"
                Margin="0, 20, 0, 5"/>
         <Entry x:Name="height"
-               Placeholder="174" />
+               Placeholder="174"
+               MaxLength="3"
+               Keyboard="Numeric"
+               ClearButtonVisibility="WhileEditing"/>
         <Button x:Name="Calculate"
                 Text="Calculate"
                 Clicked="BerechneBMI"
@@ -37,7 +46,7 @@
                x:Name="outputTip"
                Margin="0, 40, 0, 0"
                HorizontalOptions="Center"/>
-
+        <Entry Placeholder="" />
     </VerticalStackLayout>
 
 </ContentPage>
