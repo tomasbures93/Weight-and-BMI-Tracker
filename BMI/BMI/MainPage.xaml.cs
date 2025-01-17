@@ -49,11 +49,11 @@
             string weightWert = weightInput.Text;
             bool weightTest = double.TryParse(weightWert, out double weight);
             string heightWert = heightInput.Text;
-            bool heightTest = int.TryParse (heightWert, out int height);
+            bool heightTest = double.TryParse (heightWert, out double height);
             string text = "";
             int hinweis = 0;        // 0 - underweight ; 1 - nomral; 2 - overweight; 3 - fehler
             bool eingabeOK = true;
-            double bmi = weight / (height * height);
+            double bmi = weight / ((height/100) * (height/100));
             if (ageTest == false) {
                 text = "Age: Insert only numbers.\n";
                 eingabeOK = false;
@@ -68,7 +68,7 @@
                 eingabeOK = false;
                 text = text + "Height: Insert only numbers";
             }
-            if (eingabeOK == true)
+            if (eingabeOK == false)
             {
                 outputBMI.Text = text;
             } 
@@ -135,22 +135,32 @@
                             hinweis = 2;
                     }
                 }
-                switch (hinweis)
-                {
-                    case 0:
-                        //untergewicht
-                        break;
-                    case 1:
-                        //normal
-                        break;
-                    case 2:
-                        //overweight
-                        break;
-                    default:
-                        outputBMI.Text =    "You are young.\nBMI is interpreted differently because children and teens are still growing.\n" +
-                                            "Instead of fixed categories like for adults, BMI is assessed using percentiles based on age and sex.";
-                        break;
-                }
+
+                Printing(hinweis, bmi);
+                
+            }
+        }
+
+        private void Printing(int hinweis, double bmi)
+        {
+            switch (hinweis)
+            {
+                case 0:
+                    //untergewicht
+                    outputBMI.Text = $"Your BMI is {bmi:F2} Untergewicht";
+                    break;
+                case 1:
+                    //normal
+                    outputBMI.Text = $"Your BMI is {bmi:F2} normal";
+                    break;
+                case 2:
+                    //overweight
+                    outputBMI.Text = $"Your BMI is {bmi:F2} FETT";
+                    break;
+                default:
+                    outputBMI.Text = "You are young.\nBMI is interpreted differently because children and teens are still growing.\n" +
+                                        "Instead of fixed categories like for adults, BMI is assessed using percentiles based on age and sex.";
+                    break;
             }
         }
     }
