@@ -23,7 +23,7 @@
                Margin="0, 20, 0, 5"/>
         <Entry x:Name="weightInput"
                Placeholder="75 kg"
-               MaxLength="3"
+               MaxLength="6"
                Keyboard="Numeric"
                ClearButtonVisibility="WhileEditing"/>
         <Label Text="Height (cm)"
@@ -31,7 +31,7 @@
                Margin="0, 20, 0, 5"/>
         <Entry x:Name="heightInput"
                Placeholder="174 cm"
-               MaxLength="3"
+               MaxLength="6"
                Keyboard="Numeric"
                ClearButtonVisibility="WhileEditing"/>
         <Button x:Name="Calculate"

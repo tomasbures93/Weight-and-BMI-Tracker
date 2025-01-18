@@ -32,11 +32,6 @@
                                 "Believe in yourself—you’re capable of achieving a healthier, happier you.",
                                 "Cooking at home can help you control portions and make healthier choices.",
                                 "Take it one day at a time; every small change makes a difference."};
-        string[] obese = {  "Your journey to better health starts with one small, positive change today.",
-                            "Focus on feeling better, one step at a time—your health is worth it.",
-                            "Walking for 10 minutes a day is a great first step towards fitness.",
-                            "Celebrate every effort—you’re taking control of your health and future.",
-                            "Your strength and determination can transform your health and life."};
         public MainPage()
         {
             InitializeComponent();
@@ -50,100 +45,104 @@
             bool weightTest = double.TryParse(weightWert, out double weight);
             string heightWert = heightInput.Text;
             bool heightTest = double.TryParse (heightWert, out double height);
-            string text = "";
-            int hinweis = 0;        // 0 - underweight ; 1 - nomral; 2 - overweight; 3 - fehler
-            bool eingabeOK = true;
+            string textOutput = "";
+            int weightStatus = 0;        // 0 - underweight ; 1 - nomral; 2 - overweight; 3 - fehler
+            bool inputOk = true;
             double bmi = weight / ((height/100) * (height/100));
             if (ageTest == false) {
-                text = "Age: Insert only numbers.\n";
-                eingabeOK = false;
+                textOutput = "Age: Insert only numbers.\n";
+                inputOk = false;
             } 
             if (weightTest == false)
             {
-                text = text + "Weight: Insert only numbers.\n";
-                eingabeOK = false;
+                textOutput = textOutput + "Weight: Insert only numbers.\n";
+                inputOk = false;
             } 
             if (heightTest == false)
             {
-                eingabeOK = false;
-                text = text + "Height: Insert only numbers";
+                inputOk = false;
+                textOutput = textOutput + "Height: Insert only numbers";
             }
-            if (eingabeOK == false)
+            if (inputOk == false)
             {
-                outputBMI.Text = text;
+                outputBMI.Text = textOutput;
             } 
             else
             {
-                // When input OK ist
-                if (age < 19) {
-                    hinweis = 3;
-                } 
-                else
-                {
-                    if(age >= 19 && age <= 24)
-                    {
-                        if (bmi < 19)
-                            hinweis = 0;
-                        else if (bmi >= 19 && bmi <= 24)
-                            hinweis = 1;
-                        else
-                            hinweis = 2;                     
-                    }
-                    else if(age >= 25 && age <= 34)
-                    {
-                        if (bmi < 20)
-                            hinweis = 0;
-                        else if (bmi >= 20 && bmi <= 25)
-                            hinweis = 1;
-                        else
-                            hinweis = 2;
-                    }
-                    else if(age >= 35 && age <= 44)
-                    {
-                        if (bmi < 21)
-                            hinweis = 0;
-                        else if (bmi >= 21 && bmi <= 26)
-                            hinweis = 1;
-                        else
-                            hinweis = 2;
-                    } 
-                    else if(age >= 45 && age <= 54)
-                    {
-                        if (bmi < 22)
-                            hinweis = 0;
-                        else if (bmi >= 22 && bmi <= 27)
-                            hinweis = 1;
-                        else
-                            hinweis = 2;
-                    }
-                    else if(age >= 55 && age <= 64)
-                    {
-                        if (bmi < 23)
-                            hinweis = 0;
-                        else if (bmi >= 23 && bmi <= 28)
-                            hinweis = 1;
-                        else
-                            hinweis = 2;
-                    }
-                    else if(age >= 64)
-                    {
-                        if (bmi < 24)
-                            hinweis = 0;
-                        else if (bmi >= 24 && bmi <= 29)
-                            hinweis = 1;
-                        else
-                            hinweis = 2;
-                    }
-                }
-
-                Printing(hinweis, bmi);
-                
+                weightStatus = CalculateStatus(age, bmi);
+                PrintBMI(weightStatus, bmi);
             }
         }
-
-        private void Printing(int hinweis, double bmi)
+        private int CalculateStatus(int age, double bmi)
         {
-            switch (hinweis)
+            int weightStatus = 0;
+            if (age < 19)
+            {
+                weightStatus = 3;
+            }
+            else
+            {
+                if (age >= 19 && age <= 24)
+                {
+                    if (bmi < 19)
+                        weightStatus = 0;
+                    else if (bmi >= 19 && bmi <= 24)
+                        weightStatus = 1;
+                    else
+                        weightStatus = 2;
+                }
+                else if (age >= 25 && age <= 34)
+                {
+                    if (bmi < 20)
+                        weightStatus = 0;
+                    else if (bmi >= 20 && bmi <= 25)
+                        weightStatus = 1;
+                    else
+                        weightStatus = 2;
+                }
+                else if (age >= 35 && age <= 44)
+                {
+                    if (bmi < 21)
+                        weightStatus = 0;
+                    else if (bmi >= 21 && bmi <= 26)
+                        weightStatus = 1;
+                    else
+                        weightStatus = 2;
+                }
+                else if (age >= 45 && age <= 54)
+                {
+                    if (bmi < 22)
+                        weightStatus = 0;
+                    else if (bmi >= 22 && bmi <= 27)
+                        weightStatus = 1;
+                    else
+                        weightStatus = 2;
+                }
+                else if (age >= 55 && age <= 64)
+                {
+                    if (bmi < 23)
+                        weightStatus = 0;
+                    else if (bmi >= 23 && bmi <= 28)
+                        weightStatus = 1;
+                    else
+                        weightStatus = 2;
+                }
+                else if (age >= 64)
+                {
+                    if (bmi < 24)
+                        weightStatus = 0;
+                    else if (bmi >= 24 && bmi <= 29)
+                        weightStatus = 1;
+                    else
+                        weightStatus = 2;
+                }
+            }
+            return weightStatus;
+        }
+
+        private void PrintBMI(int weightStatus, double bmi)
+        {
+            switch (weightStatus)
             {
                 case 0:
                     //untergewicht
