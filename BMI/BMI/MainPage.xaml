@@ -37,6 +37,7 @@
         <Button x:Name="Calculate"
                 Text="Calculate"
                 Clicked="BerechneBMI"
+                MaximumWidthRequest="300"
                 Margin="0, 20, 0, 0"
                 BackgroundColor="{x:Static Member=SharedStyles:SharedResources.BackgroundColor}"
                 CornerRadius="20"/>

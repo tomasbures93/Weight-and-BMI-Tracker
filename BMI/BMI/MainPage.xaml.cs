@@ -148,17 +148,42 @@
                 case 0:
                     //untergewicht
                     outputTip.Text = $"Your BMI is Untergewicht";
+                    PrintTip(weightStatus);
                     break;
                 case 1:
                     //normal
                     outputTip.Text = $"Your BMI is normal";
+                    PrintTip(weightStatus);
                     break;
                 case 2:
                     //overweight
                     outputTip.Text = $"Your BMI is FETT";
+                    PrintTip(weightStatus);
                     break;
                 default:
                     outputBMI.Text = "You are young.";
+                    break;
+            }
+        }
+
+        private void PrintTip(int weightStatus)
+        {
+            Random number = new Random();
+            switch (weightStatus)
+            {
+                case 0:
+                    //untergewicht
+                    outputTip2.Text = underweight[number.Next(0, 10)];
+                    break;
+                case 1:
+                    //normal
+                    outputTip2.Text = normal[number.Next(0, 10)];
+                    break;
+                case 2:
+                    //overweight
+                    outputTip2.Text = overweight[number.Next(0, 10)];
+                    break;
+                default:
                     break;
             }
         }
