@@ -50,22 +50,22 @@
             bool inputOk = true;
             double bmi = weight / ((height/100) * (height/100));
             if (ageTest == false) {
-                textOutput = "Age: Insert only numbers.\n";
+                textOutput = "Age";
                 inputOk = false;
             } 
             if (weightTest == false)
             {
-                textOutput = textOutput + "Weight: Insert only numbers.\n";
+                textOutput = textOutput + ", Weight";
                 inputOk = false;
             } 
             if (heightTest == false)
             {
                 inputOk = false;
-                textOutput = textOutput + "Height: Insert only numbers";
+                textOutput = textOutput + ", Height";
             }
             if (inputOk == false)
             {
-                outputBMI.Text = textOutput;
+                outputBMI.Text = "Wrong input: " + textOutput;
             } 
             else
             {
