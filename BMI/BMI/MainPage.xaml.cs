@@ -65,7 +65,7 @@
             }
             if (inputOk == false)
             {
-                outputBMI.Text = "Wrong input: " + textOutput;
+                outputTip.Text = "Wrong input: " + textOutput;
             } 
             else
             {
@@ -142,23 +142,23 @@
 
         private void PrintBMI(int weightStatus, double bmi)
         {
+            outputBMI.Text = $"{bmi:F2}";
             switch (weightStatus)
             {
                 case 0:
                     //untergewicht
-                    outputBMI.Text = $"Your BMI is {bmi:F2} Untergewicht";
+                    outputTip.Text = $"Your BMI is Untergewicht";
                     break;
                 case 1:
                     //normal
-                    outputBMI.Text = $"Your BMI is {bmi:F2} normal";
+                    outputTip.Text = $"Your BMI is normal";
                     break;
                 case 2:
                     //overweight
-                    outputBMI.Text = $"Your BMI is {bmi:F2} FETT";
+                    outputTip.Text = $"Your BMI is FETT";
                     break;
                 default:
-                    outputBMI.Text = "You are young.\nBMI is interpreted differently because children and teens are still growing.\n" +
-                                        "Instead of fixed categories like for adults, BMI is assessed using percentiles based on age and sex.";
+                    outputBMI.Text = "You are young.";
                     break;
             }
         }
