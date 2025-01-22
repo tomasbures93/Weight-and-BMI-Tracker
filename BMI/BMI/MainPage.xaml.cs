@@ -71,6 +71,7 @@
             {
                 weightStatus = CalculateStatus(age, bmi);
                 PrintBMI(weightStatus, bmi);
+                Progress.IsVisible = true;
             }
         }
         private int CalculateStatus(int age, double bmi)
@@ -147,18 +148,24 @@
             {
                 case 0:
                     //untergewicht
-                    outputTip.Text = $"Your BMI is Untergewicht";
+                    outputTip.Text = $"You are underweight";
                     PrintTip(weightStatus);
+                    Progress.Progress = 0.30;
+                    Progress.ProgressColor = Colors.Yellow;
                     break;
                 case 1:
                     //normal
                     outputTip.Text = $"Your BMI is normal";
                     PrintTip(weightStatus);
+                    Progress.Progress = 0.5;
+                    Progress.ProgressColor = Colors.Green;
                     break;
                 case 2:
                     //overweight
-                    outputTip.Text = $"Your BMI is FETT";
+                    outputTip.Text = $"You are overweight";
                     PrintTip(weightStatus);
+                    Progress.Progress = 0.70;
+                    Progress.ProgressColor = Colors.OrangeRed;
                     break;
                 default:
                     outputBMI.Text = "You are young.";
