@@ -1,5 +1,4 @@
-namespace BMI
-{
+namespace BMI;
     public partial class BMI : ContentPage
     {
         string[] underweight = {"Fuel your body with nutritious meals to gain strength and energy.",
@@ -197,4 +196,3 @@ namespace BMI
         }
     }
 
-}
