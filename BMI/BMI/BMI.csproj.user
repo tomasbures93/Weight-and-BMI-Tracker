@@ -17,6 +17,12 @@
     <MauiXaml Update="BMI.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Charts.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Setup.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
   </ItemGroup>
   <ItemGroup>
     <None Update="App.xaml">

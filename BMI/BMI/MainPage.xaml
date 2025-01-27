@@ -2,13 +2,52 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BMI.MainPage"
-             Title="MainPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to the MAIN PAGE"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Label Text="Age"
-       Margin="15, 20, 10, 0"/>
-    </VerticalStackLayout>
+             Title="Home">
+
+        <Grid RowDefinitions="100, 100, 100, 100, *, Auto, Auto" ColumnDefinitions="*, *">
+            <Label 
+                Text="Welcome, User!"
+                FontSize="28"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"/>
+            <Label 
+                Text="number"
+                FontSize="26"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"/>
+            <ProgressBar 
+                Margin="20, 5,  20, 10"
+                Progress="0.5"
+                ProgressColor="Red"
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"/>
+            <Label Text="Tip"
+                Margin="10, 60,  20, 10"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                Grid.Row="3"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"/>
+            <Button 
+                Text="weight"
+                Margin="20, 5,  20, 10"
+                Grid.Row="5"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"/>
+            <Button 
+                Text="Change Setting"
+                Margin="20, 5,  20, 10"
+                VerticalOptions="End"
+                Grid.Row="6"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"/>
+        </Grid>
+
 </ContentPage>
