@@ -6,6 +6,7 @@
 
         <Grid RowDefinitions="100, 100, 100, 100, *, Auto, Auto" ColumnDefinitions="*, *">
             <Label 
+                x:Name="welcomeMessage"
                 Text="Welcome, User!"
                 FontSize="28"
                 VerticalOptions="Center" 

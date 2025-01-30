@@ -4,9 +4,41 @@
              x:Class="BMI.Charts"
              Title="Charts">
     <VerticalStackLayout>
-        <Label 
-            Text="Charts - Coming soon."
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Grid RowDefinitions="50, 200, 50, 200" ColumnDefinitions="*, *" >
+            <Label 
+                Text="Wieght Charts"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start" 
+                FontSize="20"
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="20,0,20,0"/>
+            <Label 
+                Text="Charts - Coming soon."
+                VerticalOptions="End" 
+                HorizontalOptions="Center" 
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="20,0,20,0"/>
+            <Label 
+                Text="BMI Charts"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                FontSize="20"
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="20,0,20,0"/>
+            <Label 
+                Text="Charts - Coming soon."
+                VerticalOptions="End" 
+                HorizontalOptions="Center" 
+                Grid.Row="3"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"/>
+        </Grid>
+        
     </VerticalStackLayout>
 </ContentPage>

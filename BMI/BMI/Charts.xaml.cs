@@ -1,3 +1,5 @@
+
+
 namespace BMI;
 
 public partial class Charts : ContentPage
