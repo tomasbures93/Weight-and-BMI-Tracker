@@ -1,16 +1,20 @@
-# .NET MAUI BMI Calculator
+# .NET MAUI Weight and BMI Tracker
 
-![GitHub repo size](https://img.shields.io/github/repo-size/tomasbures93/BMI-calculator) ![Static Badge](https://img.shields.io/badge/version-0.6-red) ![GitHub top language](https://img.shields.io/github/languages/top/tomasbures93/BMI-calculator) ![GitHub language count](https://img.shields.io/github/languages/count/tomasbures93/BMI-calculator) ![GitHub forks](https://img.shields.io/github/forks/tomasbures93/BMI-calculator)
+![GitHub repo size](https://img.shields.io/github/repo-size/tomasbures93/BMI-calculator) ![Static Badge](https://img.shields.io/badge/version-0.5-red) ![GitHub top language](https://img.shields.io/github/languages/top/tomasbures93/BMI-calculator) ![GitHub language count](https://img.shields.io/github/languages/count/tomasbures93/BMI-calculator) ![GitHub forks](https://img.shields.io/github/forks/tomasbures93/BMI-calculator)
 
 <h2>About</h2>
-- BMI Calculator, so you can start Living Healthy! <br>
+- The ultimate weight tracking app that automatically calculates your BMI! <br>
+- Log your weight effortlessly<br>
+- Get instant BMI calculations<br>
+- Track progress over time<br>
+- Stay motivated on your fitness journey<br>
 - Build with .NET MAUI <br>
-- Supported Platform: Windows, Android<br>
+- Supported Platform: Android<br>
 
 <h2>Features</h2>
-- Calculate your BMI<br>
+- Reworked UI<br>
 
 <h2>Coming soon</h2>
-- Make a profile<br>
-- Save your Progress<br>
-- Track your weight
+- Save setting<br>
+- Track your progress<br>
+- More Supported Platforms
