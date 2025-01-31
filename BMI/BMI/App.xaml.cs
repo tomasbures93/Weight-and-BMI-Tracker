@@ -1,4 +1,4 @@
-﻿
+﻿using BMI.models;
 
 namespace BMI
 {

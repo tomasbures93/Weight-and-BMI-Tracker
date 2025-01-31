@@ -14,14 +14,26 @@
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 Margin="20,0,20,0"/>
-            <Label 
-                Text="Charts - Coming soon."
-                VerticalOptions="End" 
-                HorizontalOptions="Center" 
-                Grid.Row="1"
-                Grid.Column="0"
-                Grid.ColumnSpan="2"
-                Margin="20,0,20,0"/>
+            <Label  VerticalOptions="End" 
+                    HorizontalOptions="Center" 
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Margin="20,0,20,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Bold Text" FontAttributes="Bold"/>
+                        <Span Text="&#x0a;" />
+                        <Span Text="Bold Text" FontAttributes="Bold"/>
+                        <Span Text="&#x0a;" />
+                        <Span Text="Bold Text" FontAttributes="Bold"/>
+                        <Span Text="&#x0a;" />
+                        <Span Text="Bold Text" FontAttributes="Bold"/>
+                        <Span Text="- Normal Text " />
+                        <Span Text="- Italic Text" FontAttributes="Italic"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
             <Label 
                 Text="BMI Charts"
                 VerticalOptions="Center" 

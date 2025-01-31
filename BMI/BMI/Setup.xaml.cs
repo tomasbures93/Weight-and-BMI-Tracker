@@ -6,4 +6,16 @@ public partial class Setup : ContentPage
 	{
 		InitializeComponent();
 	}
+
+	private void OnChangeBoxChange(object sender, CheckedChangedEventArgs e)
+	{
+		if(sender == Male)
+		{
+			Female.IsChecked = !Male.IsChecked;
+		} 
+		else
+		{
+			Male.IsChecked = !Female.IsChecked;
+		}
+	}
 }
