@@ -1,5 +1,5 @@
 ﻿using BMI.models;
-using BMI.Models;
+using Microsoft.Maui.Controls;
 
 namespace BMI
 {
@@ -9,11 +9,22 @@ namespace BMI
         {
             InitializeComponent();
             welcomeMessage.Text = "Welcome " + AppData.User.Name;
+
+#if ANDROID
+            // For Android platform, load the Android-specific view
+            Content = new MainPage().Content;
+#elif WINDOWS
+            // For Windows platform, load the Windows-specific view
+            Content = new MainPageWindows().Content;
+#else
+            // Default view for other platforms
+            Content = new Label { Text = "Default view" };
+#endif
         }
 
-        
 
-       
+
+
     }
 
 }

@@ -74,6 +74,9 @@
 	  <MauiXaml Update="Charts.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="MainPageWindows.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Setup.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
