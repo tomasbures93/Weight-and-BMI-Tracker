@@ -20,9 +20,6 @@
     <MauiXaml Update="Charts.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="MainPageWindows.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
     <MauiXaml Update="Setup.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
