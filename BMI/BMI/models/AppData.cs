@@ -9,6 +9,6 @@ namespace BMI.models
 {
     public static class AppData
     {
-        internal static Person User { get; set; } = new Person("Tomas", 75, 174, 31);
+        internal static Person User { get; set; } = new Person("User", 0, 0, 0);
     }
 }

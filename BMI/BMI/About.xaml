@@ -11,34 +11,6 @@
             HorizontalOptions="Start" 
             Margin="20,10,20,0"/>
         <Label 
-            Text="Log your weight effortlessly"
-            FontSize="16"
-            FontAttributes="Bold"
-            VerticalOptions="Center" 
-            HorizontalOptions="Start" 
-            Margin="20,30,20,0"/>
-        <Label 
-            Text="Get instant BMI calculations"
-            FontSize="16"
-            FontAttributes="Bold"
-            VerticalOptions="Center" 
-            HorizontalOptions="Start" 
-            Margin="20,0,20,0"/>
-        <Label 
-            Text="Track progress over time"
-            FontSize="16"
-            FontAttributes="Bold"
-            VerticalOptions="Center" 
-            HorizontalOptions="Start" 
-            Margin="20,0,20,0"/>
-        <Label 
-            Text="Stay motivated on your fitness journey"
-            FontSize="16"
-            FontAttributes="Bold"
-            VerticalOptions="Center" 
-            HorizontalOptions="Start" 
-            Margin="20,0,20,0"/>
-        <Label 
             Text="Made by:"
             FontSize="16"
             VerticalOptions="Center" 

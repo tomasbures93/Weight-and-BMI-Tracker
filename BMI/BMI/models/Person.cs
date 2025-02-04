@@ -13,6 +13,7 @@ namespace BMI.Models
         public double Weight { get; set; }
         public int Height { get; set; }
         public int Age { get; set; }
+        public double BMI { get; set; }
 
         public Person(string name, double weight, int height, int age)
         {
@@ -20,8 +21,13 @@ namespace BMI.Models
             Weight = weight;
             Height = height;
             Age = age;
+            BMI = CalculateBMI();                            
         }
 
-       
+        private int CalculateBMI()
+        {
+            // TO DO
+            return 0;
+        }
     }
 }
