@@ -8,13 +8,25 @@ namespace BMI
         public MainPage()
         {
             InitializeComponent();
-            welcomeMessage.Text = "Welcome " + AppData.User.Name;
+            if(AppData.User.Name == "")
+            {
+                welcomeMessage.Text = "Welcome";
+            } else
+            {
+                welcomeMessage.Text = "Welcome " + AppData.User.Name;
+                BMI.Text = AppData.User.BMI.ToString();
+            }
         }
         private async void NavigateToSetup(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Setup());
         }
 
+        private async void Refresh(object sender, EventArgs e)
+        {
+            welcomeMessage.Text = "Welcome " + AppData.User.Name;
+            BMI.Text = AppData.User.BMI.ToString("F2");
+        }
 
 
     }

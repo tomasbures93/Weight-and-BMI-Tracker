@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BMI.MainPage"
              Title="Home">
-    <Grid RowDefinitions="100, 100, 10, 100, *, Auto, Auto" ColumnDefinitions="*, *" Padding="10, 10, 10, 10">
+    <Grid RowDefinitions="100, 100, 10, 100, *, Auto, Auto, Auto" ColumnDefinitions="*, *" Padding="10, 10, 10, 10">
             <Label 
                 x:Name="welcomeMessage"
                 Text="Welcome, User!"
@@ -54,6 +54,16 @@
                 Margin="20, 5,  20, 10"
                 VerticalOptions="End"
                 Grid.Row="6"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"/>
+        <!-- That has to be deleted later!!! When DataBinding done -->
+            <Button 
+                x:Name="refresh"
+                Clicked="Refresh"
+                Text="Refresh info"
+                Margin="20, 5,  20, 10"
+                VerticalOptions="End"
+                Grid.Row="7"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"/>
         </Grid>
