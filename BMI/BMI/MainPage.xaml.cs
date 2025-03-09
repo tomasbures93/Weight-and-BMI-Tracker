@@ -13,12 +13,14 @@ namespace BMI
         4) ChartPage
         5) MainPage
         6) SetupPage
-        7) SaveData ( File / AppProperties )
+        7) SaveData - SQlite database
         8) Proper Test
         */
         public MainPage()
         {
             InitializeComponent();
+            PersonDBContext context = new PersonDBContext();
+            context.Database.EnsureCreated();
             if(AppData.User.Name == "")
             {
                 welcomeMessage.Text = "Welcome";
@@ -27,6 +29,11 @@ namespace BMI
                 welcomeMessage.Text = "Welcome " + AppData.User.Name;
                 BMI.Text = AppData.User.BMI.ToString();
             }
+            if(File.Exists(Path.Combine(FileSystem.AppDataDirectory, "Database.db")) == true)
+            {
+                welcomeMessage.Text = "Database da";
+                // Tested and database is there
+            } 
         }
         private async void NavigateToSetup(object sender, EventArgs e)
         {

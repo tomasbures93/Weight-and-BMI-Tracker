@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace BMI.Models
 {
-    class Person
+    public class Person
     {
+
         private string _name;
         public string Name { get { return _name; } set { _name = value; } }
         public double Weight { get; set; }
@@ -23,7 +24,7 @@ namespace BMI.Models
             Height = height;
             Age = age;
             Gender = gender;
-            BMI = bmi;                            
+            BMI = bmi;
         }
 
         public int CalculateStatus(int age, double bmi)
