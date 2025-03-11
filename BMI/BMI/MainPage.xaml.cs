@@ -1,10 +1,13 @@
 ﻿using BMI.models;
+using CommunityToolkit.Maui.Alerts;
 using Microsoft.Maui.Controls;
 
 namespace BMI
 {
     public partial class MainPage : ContentPage
     {
+        private readonly PersonDBContext _dbContext;
+
         /*
         TO DO
         1) AboutPage
@@ -13,27 +16,25 @@ namespace BMI
         4) ChartPage
         5) MainPage
         6) SetupPage
-        7) SaveData - SQlite database
+        7) SaveData - SQlite database - working on it
         8) Proper Test
         */
-        public MainPage()
+
+        public MainPage(PersonDBContext dbContext)
         {
             InitializeComponent();
-            PersonDBContext context = new PersonDBContext();
-            context.Database.EnsureCreated();
-            if(AppData.User.Name == "")
-            {
-                welcomeMessage.Text = "Welcome";
-            } else
-            {
-                welcomeMessage.Text = "Welcome " + AppData.User.Name;
-                BMI.Text = AppData.User.BMI.ToString();
-            }
+            _dbContext = dbContext;
+
             if(File.Exists(Path.Combine(FileSystem.AppDataDirectory, "Database.db")) == true)
             {
-                welcomeMessage.Text = "Database da";
+                Toast.Make("Database is ready");
                 // Tested and database is there
-            } 
+            } else
+            {
+                Toast.Make("Problem with DB");
+            }
+
+            welcomeMessage.Text = dbContext.Personen.FirstOrDefault().Name;
         }
         private async void NavigateToSetup(object sender, EventArgs e)
         {
