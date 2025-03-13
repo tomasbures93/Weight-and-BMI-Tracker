@@ -11,13 +11,14 @@ namespace BMI.models
     {
         [Key]
         public int ID { get; set; }
-        public string Name { get; set; }
+        public string UserName { get; set; }
         public double Weight { get; set; }
         public double Height { get; set; }
-        public string DateOfBirth { get; set; }         // Rework to DateTime
-        public string Gender { get; set; }
-        public double? BMI { get; set; }
-
+        public DateTime DateOfBirth { get; set; }
+        public int Gender { get; set; }                         // 0 - Male , 1 - Female, 2 - Other
+        public double? BMI { get; set; }                        // That has to be calculated
         public List<Weight>? Weights { get; set; }
+
+      
     }
 }

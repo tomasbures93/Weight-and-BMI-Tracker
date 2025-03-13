@@ -110,7 +110,6 @@
                 Margin="20,0,20,0"/>
             <Button 
                     x:Name="SavingData"
-                    Clicked="SaveData"
                     Text="Save" 
                     VerticalOptions="End" 
                     Grid.Row="10"

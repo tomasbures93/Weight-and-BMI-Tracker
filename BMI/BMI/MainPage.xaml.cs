@@ -34,17 +34,11 @@ namespace BMI
                 Toast.Make("Problem with DB");
             }
 
-            welcomeMessage.Text = dbContext.Personen.FirstOrDefault().Name;
+            welcomeMessage.Text = dbContext.Personen.FirstOrDefault().UserName;
         }
         private async void NavigateToSetup(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Setup());
-        }
-
-        private async void Refresh(object sender, EventArgs e)
-        {
-            welcomeMessage.Text = "Welcome " + AppData.User.Name;
-            BMI.Text = AppData.User.BMI.ToString("F2");
         }
 
 

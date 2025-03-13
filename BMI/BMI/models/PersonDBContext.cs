@@ -1,4 +1,4 @@
-﻿using BMI.Models;
+﻿using BMI.models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -22,7 +22,9 @@ namespace BMI.models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().HasData(
-                new { ID = 1 , Name = "User", Weight = 75.0, Height = 175.0, DateOfBirth = "1.1.1111", Gender = "Male", });
+                new { 
+                    ID = 1 , UserName = "User", Weight = 75.0, Height = 175.0, DateOfBirth = DateTime.Now, Gender = 0, 
+                });
         }
     }
 }

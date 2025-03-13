@@ -10,8 +10,8 @@ namespace BMI.models
     {
         public int ID {  get; set; }
 
-        public double BMI { get; set; }
+        public double WeightValue { get; set; }
 
-        public DateTime dateTime { get; set; }
+        public DateTime Datum { get; set; }
     }
 }

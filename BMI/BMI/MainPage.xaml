@@ -59,7 +59,6 @@
         <!-- That has to be deleted later!!! When DataBinding done -->
             <Button 
                 x:Name="refresh"
-                Clicked="Refresh"
                 Text="Refresh info"
                 Margin="20, 5,  20, 10"
                 VerticalOptions="End"
