@@ -16,13 +16,9 @@
         ContentTemplate="{DataTemplate local:Charts}"
         Route="Charts" />
     <ShellContent
-        Title="Setup"
+        Title="Profile"
         ContentTemplate="{DataTemplate local:Setup}"
         Route="Setup" />
-    <ShellContent
-        Title="About"
-        ContentTemplate="{DataTemplate local:About}"
-        Route="About" />
     <ShellContent
         Title="BMI"
         ContentTemplate="{DataTemplate local:BMI}"

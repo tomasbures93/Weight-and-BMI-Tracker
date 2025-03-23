@@ -7,6 +7,12 @@ using System.Threading.Tasks;
 
 namespace BMI.models
 {
+    public enum GenderType
+    {
+        Male,
+        Female,
+        Diverse
+    }
     public class User
     {
         [Key]
@@ -15,10 +21,17 @@ namespace BMI.models
         public double Weight { get; set; }
         public double Height { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public int Gender { get; set; }                         // 0 - Male , 1 - Female, 2 - Other
+        public GenderType Gender { get; set; }                         // 0 - Male , 1 - Female, 2 - Other
         public double? BMI { get; set; }                        // That has to be calculated
         public List<Weight>? Weights { get; set; }
 
-      
+        public User(string name)
+        {
+            UserName = name;
+            Weight = 0;
+            Height = 0;
+            DateOfBirth = DateTime.Now;
+            Gender = GenderType.Male;
+        }
     }
 }

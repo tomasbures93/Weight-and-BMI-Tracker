@@ -1,4 +1,6 @@
-﻿namespace BMI
+﻿using BMI.Models;
+
+namespace BMI
 {
     public partial class AppShell : Shell
     {

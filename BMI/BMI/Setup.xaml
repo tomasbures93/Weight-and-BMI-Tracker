@@ -66,10 +66,10 @@
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 Margin="20,20,20,0"/>
-            <Entry 
-                x:Name="WeightInput"
-                Keyboard="Numeric"
-                Placeholder="75 kg" 
+            <Picker 
+                ItemsSource="{Binding WeightNumberList}" 
+                SelectedIndex="{Binding WeightSelectedIndex}" 
+                FontSize="16"
                 Grid.Row="5"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
@@ -83,16 +83,16 @@
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 Margin="20,20,20,0"/>
-            <Entry 
-                x:Name="HeightInput"
-                Keyboard="Numeric"
-                Placeholder="174 cm" 
+            <Picker 
+                ItemsSource="{Binding HeightNumberList}" 
+                SelectedIndex="{Binding HeightSelectedIndex}" 
+                FontSize="16"
                 Grid.Row="7"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
-                Margin="20,0,20,0"/>
+                Margin="20,0,20,0" />
             <Label 
-                Text="Age"
+                Text="Date of Birth"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start" 
                 FontSize="16"
@@ -100,22 +100,24 @@
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 Margin="20,20,20,0"/>
-            <Entry 
-                x:Name="AgeInput"
-                Keyboard="Numeric"
-                Placeholder="25" 
+            <DatePicker 
+                x:Name="dateOfBirth"
                 Grid.Row="9"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
-                Margin="20,0,20,0"/>
+                Format="dd.MM.yyyy"
+                MinimumDate="1.1.1900"
+                Margin="20,0,20,0"
+                HorizontalOptions="Fill"
+                WidthRequest="500"/>
             <Button 
-                    x:Name="SavingData"
-                    Text="Save" 
-                    VerticalOptions="End" 
-                    Grid.Row="10"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    Margin="20,30,20,0"/>
+                x:Name="SavingData"
+                Text="Save" 
+                VerticalOptions="End" 
+                Grid.Row="10"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="20,30,20,0"/>
         </Grid>
     </VerticalStackLayout>
 </ContentPage>

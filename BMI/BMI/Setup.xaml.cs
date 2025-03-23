@@ -1,5 +1,4 @@
-using BMI.models;
-using CommunityToolkit.Maui.Alerts;
+using BMI.Models;
 namespace BMI;
 
 public partial class Setup : ContentPage
@@ -7,7 +6,8 @@ public partial class Setup : ContentPage
 	public Setup()
 	{
 		InitializeComponent();
-	}
+        BindingContext = new ProfilViewModel();
+    }
 
 	//public async void SaveData(object sender, EventArgs e)
 	//{

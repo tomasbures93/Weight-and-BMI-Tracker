@@ -26,10 +26,11 @@ namespace BMI
                                     options.UseSqlite($"Data source={path}"));      // Rework so I have config datei config datei
 
             builder.Services.AddSingleton<PersonDBContext>();
+            builder.Services.AddSingleton(new User("User"));
 
-//#if DEBUG
-//            builder.Logging.AddDebug();
-//#endif
+            //#if DEBUG
+            //            builder.Logging.AddDebug();
+            //#endif
 
             return builder.Build();
         }

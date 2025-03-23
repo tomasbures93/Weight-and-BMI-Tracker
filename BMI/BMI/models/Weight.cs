@@ -13,5 +13,13 @@ namespace BMI.models
         public double WeightValue { get; set; }
 
         public DateTime Datum { get; set; }
+
+        public Weight() { }
+
+        public Weight(double weight)
+        {
+            WeightValue = weight;
+            Datum = DateTime.Now;
+        }
     }
 }

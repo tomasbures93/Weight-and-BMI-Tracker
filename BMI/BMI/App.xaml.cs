@@ -7,8 +7,6 @@ namespace BMI
         public App()
         {
             InitializeComponent();
-            
-            
         }
 
         protected override Window CreateWindow(IActivationState? activationState)

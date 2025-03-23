@@ -11,9 +11,6 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemGroup>
-    <MauiXaml Update="About.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
     <MauiXaml Update="BMI.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

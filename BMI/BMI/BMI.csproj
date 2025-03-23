@@ -69,9 +69,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="About.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="BMI.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
