@@ -18,6 +18,7 @@
                 Margin="20,20,20,0"/>
             <Entry 
                 x:Name="UsernameInput"
+                Text="{Binding UserName}"
                 Placeholder="" 
                 Grid.Row="1"
                 Grid.Column="0"
@@ -66,9 +67,8 @@
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 Margin="20,20,20,0"/>
-            <Picker 
-                ItemsSource="{Binding WeightNumberList}" 
-                SelectedIndex="{Binding WeightSelectedIndex}" 
+            <Entry
+                Text="{Binding Weight}" 
                 FontSize="16"
                 Grid.Row="5"
                 Grid.Column="0"
@@ -83,9 +83,8 @@
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 Margin="20,20,20,0"/>
-            <Picker 
-                ItemsSource="{Binding HeightNumberList}" 
-                SelectedIndex="{Binding HeightSelectedIndex}" 
+            <Entry
+                Text="{Binding Height}" 
                 FontSize="16"
                 Grid.Row="7"
                 Grid.Column="0"
@@ -102,6 +101,7 @@
                 Margin="20,20,20,0"/>
             <DatePicker 
                 x:Name="dateOfBirth"
+                Date="{Binding DateOfBirth, Mode=TwoWay}"
                 Grid.Row="9"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
@@ -113,6 +113,7 @@
             <Button 
                 x:Name="SavingData"
                 Text="Save" 
+                Command="{Binding SaveDataCommand}" 
                 VerticalOptions="End" 
                 Grid.Row="10"
                 Grid.Column="0"

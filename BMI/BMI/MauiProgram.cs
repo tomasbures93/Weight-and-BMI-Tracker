@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using CommunityToolkit.Maui;
 using Microsoft.Extensions.Options;
 using BMI.models;
+using BMI.Models;
 
 namespace BMI
 {
@@ -23,10 +24,11 @@ namespace BMI
 
             string path = Path.Combine(FileSystem.AppDataDirectory, "Database.db");
             builder.Services.AddDbContext<PersonDBContext>(options => 
-                                    options.UseSqlite($"Data source={path}"));      // Rework so I have config datei config datei
+                                    options.UseSqlite($"Data source={path}"));      // Rework so I have config File 
 
             builder.Services.AddSingleton<PersonDBContext>();
             builder.Services.AddSingleton(new User("User"));
+            builder.Services.AddSingleton<ProfilViewModel>();
 
             //#if DEBUG
             //            builder.Logging.AddDebug();

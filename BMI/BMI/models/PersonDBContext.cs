@@ -23,7 +23,7 @@ namespace BMI.models
         {
             modelBuilder.Entity<User>().HasData(
                 new { 
-                    ID = 1 , UserName = "User", Weight = 75.0, Height = 175.0, DateOfBirth = DateTime.Now, Gender = 0, 
+                    ID = 1 , UserName = "User", Weight = 75.0, Height = 175.0, DateOfBirth = DateTime.Now
                 });
         }
     }
